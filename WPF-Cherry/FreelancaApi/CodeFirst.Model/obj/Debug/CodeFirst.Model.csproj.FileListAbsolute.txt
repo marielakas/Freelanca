@@ -1,0 +1,5 @@
+C:\Temp\xaml project\Аssembla---\FreelancaApi\CodeFirst.Model\bin\Debug\CodeFirst.Model.dll
+C:\Temp\xaml project\Аssembla---\FreelancaApi\CodeFirst.Model\bin\Debug\CodeFirst.Model.pdb
+C:\Temp\xaml project\Аssembla---\FreelancaApi\CodeFirst.Model\obj\Debug\CodeFirst.Model.csprojResolveAssemblyReference.cache
+C:\Temp\xaml project\Аssembla---\FreelancaApi\CodeFirst.Model\obj\Debug\CodeFirst.Model.dll
+C:\Temp\xaml project\Аssembla---\FreelancaApi\CodeFirst.Model\obj\Debug\CodeFirst.Model.pdb

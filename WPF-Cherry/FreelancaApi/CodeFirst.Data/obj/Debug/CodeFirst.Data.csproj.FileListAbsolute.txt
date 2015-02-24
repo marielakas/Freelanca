@@ -1,0 +1,10 @@
+C:\Temp\xaml project\Аssembla---\FreelancaApi\CodeFirst.Data\bin\Debug\CodeFirst.Data.dll.config
+C:\Temp\xaml project\Аssembla---\FreelancaApi\CodeFirst.Data\bin\Debug\CodeFirst.Data.dll
+C:\Temp\xaml project\Аssembla---\FreelancaApi\CodeFirst.Data\bin\Debug\CodeFirst.Data.pdb
+C:\Temp\xaml project\Аssembla---\FreelancaApi\CodeFirst.Data\bin\Debug\CodeFirst.Model.dll
+C:\Temp\xaml project\Аssembla---\FreelancaApi\CodeFirst.Data\bin\Debug\EntityFramework.dll
+C:\Temp\xaml project\Аssembla---\FreelancaApi\CodeFirst.Data\bin\Debug\CodeFirst.Model.pdb
+C:\Temp\xaml project\Аssembla---\FreelancaApi\CodeFirst.Data\bin\Debug\EntityFramework.xml
+C:\Temp\xaml project\Аssembla---\FreelancaApi\CodeFirst.Data\obj\Debug\CodeFirst.Data.csprojResolveAssemblyReference.cache
+C:\Temp\xaml project\Аssembla---\FreelancaApi\CodeFirst.Data\obj\Debug\CodeFirst.Data.dll
+C:\Temp\xaml project\Аssembla---\FreelancaApi\CodeFirst.Data\obj\Debug\CodeFirst.Data.pdb

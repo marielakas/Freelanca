@@ -1,0 +1,149 @@
+﻿<UserControl x:Class="FreeLancaVS2012.Views.LoginRegisterFormView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:viewModels="clr-namespace:FreeLancaVS2012.ViewModels"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <TabControl > 
+    <TabItem Header="Login">
+      <Grid>
+        <Grid.RowDefinitions>
+          <RowDefinition MinHeight="70"/>
+          <RowDefinition MinHeight="70"/>
+          <RowDefinition MinHeight="100"/>
+          <RowDefinition MaxHeight="60"  MinHeight="60" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition/>
+          <ColumnDefinition  />
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="0" 
+                           HorizontalAlignment="Right"
+                           Grid.Column="0">
+                    Username</TextBlock>
+        <TextBox Grid.Row="0"
+                         HorizontalAlignment="Left"
+                         Grid.Column="1"
+                         Text="{Binding LoginUsername}" Width="200"/>
+
+        <TextBlock Grid.Row="1" 
+                           HorizontalAlignment="Right"
+                           Grid.Column="0">
+                    Password</TextBlock>
+        <PasswordBox Grid.Row="1"
+                             Grid.Column="1"
+                             Width="200" 
+                             Password="123456q"
+                             HorizontalAlignment="Left"
+                             Name="BoxPasswordLogin"/>
+
+        <Button Grid.Row="2"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2"
+                        Content="Login"
+                        Command="{Binding Login}"
+                        CommandParameter="{Binding ElementName=BoxPasswordLogin}"/>
+        <TextBlock Grid.Row="3"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="2"
+                   TextAlignment="Center"
+                   VerticalAlignment="Center"
+                   Text="{Binding Massage}"/>
+
+        <!--<TextBlock Text="{Binding Message}"
+                   Grid.Row="2"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="3"/>-->
+
+      </Grid>
+    </TabItem>
+
+    <TabItem Header="Register">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition /> 
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Row="0"                    
+                           HorizontalAlignment="Right"  
+                           Grid.Column="0">Username</TextBlock>
+                <TextBox Grid.Row="0"
+                         HorizontalAlignment="Left"
+                         Grid.Column="1"
+                         Text="{Binding RegUsername}" Width="200"/>
+
+                <TextBlock Grid.Row="1" 
+                           HorizontalAlignment="Right"
+                           Grid.Column="0">Display Name</TextBlock>
+                <TextBox Grid.Row="1"
+                         Grid.Column="1"
+                         HorizontalAlignment="Left"
+                         Text="{Binding DisplayName}" Width="200"/>
+
+                <TextBlock Grid.Row="2" 
+                           HorizontalAlignment="Right"
+                           Grid.Column="0">Phone Number</TextBlock>
+                <TextBox Grid.Row="2"
+                         Grid.Column="1"
+                         HorizontalAlignment="Left"
+                         Text="{Binding Phone}" Width="200"/>
+
+                <TextBlock Grid.Row="3" 
+                           HorizontalAlignment="Right"
+                           Grid.Column="0">Location</TextBlock>
+                <TextBox Grid.Row="3"
+                         Grid.Column="1"
+                         HorizontalAlignment="Left"
+                         Text="{Binding Location}" Width="200"/>
+
+                <TextBlock Grid.Row="4" 
+                           HorizontalAlignment="Right"
+                           Grid.Column="0">Email</TextBlock>
+                <TextBox Grid.Row="4"
+                         Grid.Column="1"
+                         HorizontalAlignment="Left"
+                         Text="{Binding Mail}" Width="200"/>
+
+                <TextBlock Grid.Row="5" 
+                           HorizontalAlignment="Right"
+                           Grid.Column="0">Password</TextBlock>
+                
+                <PasswordBox Name="BoxPasswordRegister"
+                             Password="123456q"
+                             Grid.Row="5"
+                             Grid.Column="1"
+                             HorizontalAlignment="Left" Width="200"/>
+
+
+                <Button Grid.Row="6"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2"
+                        Content="Register"
+                        Command="{Binding Register}"
+                        CommandParameter="{Binding ElementName=BoxPasswordRegister}"/>
+
+                <!--<TextBlock Text="{Binding Message}"
+                   Grid.Row="7"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="2"/>-->
+
+            </Grid>
+        </TabItem>
+        
+    </TabControl>
+
+</UserControl>

@@ -1,0 +1,84 @@
+﻿<Window xmlns:Views="clr-namespace:FreeLancaVS2012.Views"  
+        x:Class="FreeLancaVS2012.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        
+        xmlns:ViewModel="clr-namespace:FreeLancaVS2012.ViewModels"
+        xmlns:converters="clr-namespace:FreeLancaVS2012.Converter"
+        Title="MainWindow" Height="350" Width="525">
+
+  <Window.DataContext>
+    <ViewModel:AppViewModel />
+  </Window.DataContext>
+  <Window.Resources>
+    <converters:TabSizeConverter x:Key="tabSizeConverter" />
+    <Style TargetType="{x:Type TabItem}">
+      <Setter Property="Width">
+        <Setter.Value>
+          <MultiBinding Converter="{StaticResource tabSizeConverter}">
+            <Binding RelativeSource="{RelativeSource Mode=FindAncestor,
+            AncestorType={x:Type TabControl}}" />
+            <Binding RelativeSource="{RelativeSource Mode=FindAncestor,
+            AncestorType={x:Type TabControl}}" Path="ActualWidth" />
+          </MultiBinding>
+        </Setter.Value>
+      </Setter>
+    </Style>
+    <DataTemplate            
+            DataType="{x:Type ViewModel:LoginRegisterFormViewModel}">
+      <Views:LoginRegisterFormView/>
+    </DataTemplate>
+    <DataTemplate 
+                DataType="{x:Type ViewModel:HomePageViewModel}">
+      <Views:HomePageView/>
+    </DataTemplate>
+    <DataTemplate 
+                DataType="{x:Type ViewModel:MyJobsViewModel}">
+      <Views:MyJobsFormView/>
+    </DataTemplate>
+    <DataTemplate 
+                DataType="{x:Type ViewModel:SearchJobsViewModel}">
+      <Views:SearchJobsView/>
+    </DataTemplate>
+    <DataTemplate 
+                DataType="{x:Type ViewModel:PostedJobsViewModel}">
+      <Views:PostedJobsView/>
+    </DataTemplate>
+    <DataTemplate 
+                DataType="{x:Type ViewModel:AddNewJobViewModel}">
+      <Views:AddNewJobView/>
+    </DataTemplate>
+    <converters:BoolToVisibilityConverter x:Key="boolToVisibilityConverter"/>
+  </Window.Resources>
+  <Grid>
+    <DockPanel>
+      <StackPanel Name="HeaderContainer"
+                        Visibility="{Binding Path=LoggedInUser,Converter={StaticResource boolToVisibilityConverter}}"
+                        DockPanel.Dock="Top"
+                        Orientation="Horizontal">
+        <ItemsControl ItemsSource="{Binding ViewModels}">
+          <ItemsControl.ItemsPanel>
+            <ItemsPanelTemplate>
+              <StackPanel Orientation="Horizontal" />
+            </ItemsPanelTemplate>
+          </ItemsControl.ItemsPanel>
+          <ItemsControl.ItemTemplate>
+            <DataTemplate>
+              <Button Content="{Binding Name}"                      
+                      CommandParameter="{Binding}"
+                      Command="{Binding Path=DataContext.ChangeViewModel, RelativeSource={RelativeSource AncestorType={x:Type Window}}}"/>
+            </DataTemplate>
+          </ItemsControl.ItemTemplate>
+        </ItemsControl>
+        <!--<Button Content="Search" 
+                        Command="{Binding GoToSearchPage}"></Button>
+                <Button Content="Posted Jobs"
+                        Command="{Binding GoToPostedJobsPage}"></Button>-->
+        <Button Command="{Binding Logout}"
+                            Content="Logout"/>
+      </StackPanel>
+      <ContentControl DockPanel.Dock="Bottom"            
+                            Content="{Binding CurrentViewModel}" />
+    </DockPanel>
+  </Grid>
+</Window>

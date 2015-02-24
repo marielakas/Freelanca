@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6CF796C3-8030-4406-99DA-4F7F6BBBD1EC}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FreeLancaVS2012</RootNamespace>
+    <AssemblyName>FreeLancaVS2012</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Behavior\RelayCommand.cs" />
+    <Compile Include="Converter\BoolToVisibilityConverter.cs" />
+    <Compile Include="Converter\TabSizeConverter.cs" />
+    <Compile Include="Helpers\SearchSuccessArgs.cs" />
+    <Compile Include="ViewModels\AddNewJobViewModel.cs" />
+    <Compile Include="ViewModels\AppViewModel.cs" />
+    <Compile Include="ViewModels\CategoryViewModel.cs" />
+    <Compile Include="ViewModels\HomePageViewModel.cs" />
+    <Compile Include="ViewModels\IPageViewModel.cs" />
+    <Compile Include="ViewModels\JobViewModel.cs" />
+    <Compile Include="ViewModels\LoginRegisterFormViewModel.cs" />
+    <Compile Include="ViewModels\MyJobsViewModel.cs" />
+    <Compile Include="ViewModels\PostedJobsViewModel.cs" />
+    <Compile Include="ViewModels\SearchJobsViewModel.cs" />
+    <Compile Include="ViewModels\TagViewModel.cs" />
+    <Compile Include="ViewModels\TaskViewModel.cs" />
+    <Compile Include="ViewModels\ViewModelBase.cs" />
+    <Compile Include="Views\AddNewJobView.xaml.cs">
+      <DependentUpon>AddNewJobView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HomePageView.xaml.cs">
+      <DependentUpon>HomePageView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LoginRegisterFormView.xaml.cs">
+      <DependentUpon>LoginRegisterFormView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MyJobsFormView.xaml.cs">
+      <DependentUpon>MyJobsFormView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PostedJobsView.xaml.cs">
+      <DependentUpon>PostedJobsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SearchJobsView.xaml.cs">
+      <DependentUpon>SearchJobsView.xaml</DependentUpon>
+    </Compile>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\DataPersister.cs" />
+    <Compile Include="Data\HttpRequester.cs" />
+    <Compile Include="Helpers\LoginSuccessArgs.cs" />
+    <Compile Include="Helpers\NavigationSuccessArgs.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Views\AddNewJobView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\HomePageView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\LoginRegisterFormView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\MyJobsFormView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PostedJobsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SearchJobsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\CategoryModel.cs" />
+    <Compile Include="Models\JobModel.cs" />
+    <Compile Include="Models\LoginResponseModel.cs" />
+    <Compile Include="Models\RegisterUserResponseModel.cs" />
+    <Compile Include="Models\TagModel.cs" />
+    <Compile Include="Models\TaskModel.cs" />
+    <Compile Include="Models\UserLoginModel.cs" />
+    <Compile Include="Models\UserModel.cs" />
+    <Compile Include="Models\UserTasksModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="packages\Newtonsoft.Json.5.0.6\Newtonsoft.Json.5.0.6.nupkg" />
+    <None Include="packages\Newtonsoft.Json.5.0.6\Newtonsoft.Json.5.0.6.nuspec" />
+    <None Include="packages\repositories.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages\Newtonsoft.Json.5.0.6\lib\net20\Newtonsoft.Json.dll" />
+    <Resource Include="packages\Newtonsoft.Json.5.0.6\lib\net20\Newtonsoft.Json.xml" />
+    <Content Include="packages\Newtonsoft.Json.5.0.6\lib\net35\Newtonsoft.Json.dll" />
+    <Resource Include="packages\Newtonsoft.Json.5.0.6\lib\net35\Newtonsoft.Json.xml" />
+    <Content Include="packages\Newtonsoft.Json.5.0.6\lib\net40\Newtonsoft.Json.dll" />
+    <Resource Include="packages\Newtonsoft.Json.5.0.6\lib\net40\Newtonsoft.Json.xml" />
+    <Content Include="packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll" />
+    <Resource Include="packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.xml" />
+    <Content Include="packages\Newtonsoft.Json.5.0.6\lib\netcore45\Newtonsoft.Json.dll" />
+    <Resource Include="packages\Newtonsoft.Json.5.0.6\lib\netcore45\Newtonsoft.Json.xml" />
+    <Content Include="packages\Newtonsoft.Json.5.0.6\lib\portable-net40+sl4+wp7+win8\Newtonsoft.Json.dll" />
+    <Resource Include="packages\Newtonsoft.Json.5.0.6\lib\portable-net40+sl4+wp7+win8\Newtonsoft.Json.xml" />
+    <Content Include="packages\Newtonsoft.Json.5.0.6\lib\portable-net45+wp80+win8\Newtonsoft.Json.dll" />
+    <Resource Include="packages\Newtonsoft.Json.5.0.6\lib\portable-net45+wp80+win8\Newtonsoft.Json.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,8 @@
+C:\Temp\xaml project\Аssembla---\FreelancaApi\Freelancer.Repositories\bin\Debug\Freelancer.Repositories.dll.config
+C:\Temp\xaml project\Аssembla---\FreelancaApi\Freelancer.Repositories\bin\Debug\Freelancer.Repositories.dll
+C:\Temp\xaml project\Аssembla---\FreelancaApi\Freelancer.Repositories\bin\Debug\Freelancer.Repositories.pdb
+C:\Temp\xaml project\Аssembla---\FreelancaApi\Freelancer.Repositories\bin\Debug\EntityFramework.dll
+C:\Temp\xaml project\Аssembla---\FreelancaApi\Freelancer.Repositories\bin\Debug\EntityFramework.xml
+C:\Temp\xaml project\Аssembla---\FreelancaApi\Freelancer.Repositories\obj\Debug\Freelancer.Repositories.csprojResolveAssemblyReference.cache
+C:\Temp\xaml project\Аssembla---\FreelancaApi\Freelancer.Repositories\obj\Debug\Freelancer.Repositories.dll
+C:\Temp\xaml project\Аssembla---\FreelancaApi\Freelancer.Repositories\obj\Debug\Freelancer.Repositories.pdb
